@@ -75,6 +75,27 @@ To deploy the AKS cluster:
      az aks get-credentials --resource-group <resource-group-name> --name <cluster-name> 
      ```
 
+## PowerShell Deployment Option
+
+You can also deploy using the included PowerShell script:
+
+1. Open PowerShell and navigate to the project directory:
+    ```powershell
+    cd .\Workload
+    ```
+
+2. Run the deployment script:
+    ```powershell
+    .\dep.ps1
+    ```
+
+3. The script will handle the Terraform initialization, planning, and deployment processes automatically.
+
+4. You can pass parameters to customize the deployment:
+    ```powershell
+    .\dep.ps1 -ResourceGroupName "myAKSResourceGroup" -Location "eastus" -ClusterName "myAKSCluster"
+    ```
+
 ## Cleanup
 
 To destroy all resources when no longer needed:
@@ -82,6 +103,9 @@ To destroy all resources when no longer needed:
 ```bash
 terraform destroy --auto-approve
 ```
+
+### For PowerShell
+When using PowerShell, you need to destroy resources manually or create a separate cleanup script for resource removal.
 
 ## Configuration Customization
 
